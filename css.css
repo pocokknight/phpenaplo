@@ -71,6 +71,9 @@ body{
     border: deepskyblue solid 1px;
     border-radius: 5px;
 }
+.gomb:hover{
+    background-color: palegoldenrod;
+}
 #gomb1{
     left: 15%;
 }
@@ -94,4 +97,15 @@ body{
     border: dashed deepskyblue 1px;
     z-index: 4;
     margin-bottom: 5%;
+}
+.listaelem{
+    color: deepskyblue;
+    width: 98%;
+    margin: 1%;
+    height: auto;
+    background-color: whitesmoke;
+    text-align: center;
+}
+.listaelem:hover{
+    background-color: palegoldenrod;
 }

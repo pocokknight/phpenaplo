@@ -8,12 +8,11 @@
     <body>
         <?php
         include './connect.php';
-        /* if (isset($_REQUEST['gomb1'])) {
-          $szoveg = "1";
-          }else if(isset($_REQUEST['gomb2'])) {
-          $szoveg = "2";
-          }
-         */
+        if (isset($_REQUEST['gomb1'])) {
+            $sql = "INSERT INTO ev (ev) VALUES (2018)";
+            $conn->update($sql);
+        }else if(isset($_REQUEST['gomb2'])) {
+        }
         ?>
         <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
             <div class="hatter">
@@ -29,15 +28,13 @@
                 </div>
                 <div class="lista">
                     <?php 
-                    echo "valami";
-                    /* @var $result type */
                     $sql = "select ev from ev";
                     $result = $conn->query($sql);
-                    echo $result->num_rows;
-                    $i = 0;
-                    while($i < $result){
-                        echo "asd <br>";
-                        $i++;
+                    if ($result->num_rows > 0) {
+                        while ($row = $result->fetch_assoc()) {
+                            $str = $row["ev"];
+                            echo "<div class=\"listaelem\">$str</div>";
+                        }
                     }
                     ?>
                 </div>
