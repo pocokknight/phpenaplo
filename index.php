@@ -7,12 +7,12 @@
     </head>
     <body>
         <?php
-        include './connect.php';
-        if (isset($_REQUEST['gomb1'])) {
-            $sql = "INSERT INTO ev (ev) VALUES (2018)";
-            $conn->update($sql);
-        }else if(isset($_REQUEST['gomb2'])) {
-        }
+        //include './connect.php';
+        //if (isset($_REQUEST['gomb1'])) {
+        //    $sql = "INSERT INTO ev (ev) VALUES (2018)";
+        //    $conn->update($sql);
+        //}else if(isset($_REQUEST['gomb2'])) {
+        //}
         ?>
         <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
             <div class="hatter">
@@ -28,14 +28,14 @@
                 </div>
                 <div class="lista">
                     <?php 
-                    $sql = "select ev from ev";
+                    /*$sql = "select ev from ev";
                     $result = $conn->query($sql);
                     if ($result->num_rows > 0) {
                         while ($row = $result->fetch_assoc()) {
                             $str = $row["ev"];
-                            echo "<div class=\"listaelem\">$str</div>";
+                            echo "<div>$str</div>";
                         }
-                    }
+                    }*/
                     ?>
                 </div>
             </div>
