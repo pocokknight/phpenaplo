@@ -8,8 +8,8 @@
     <body>
         <form name="aform" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
             <div class="hatter">
-                <button name="gomb" class="gomb" value="gomb1" id="gomb1" href="0evek.php">Évekre vissza</button>
-                <button name="gomb" class="gomb" value="gomb2" id="gomb2">Új osztály</button>
+                <a name="gomb" class="gomb" value="gomb1" id="gomb1" href="index.php">Évekre vissza</a>
+                <a name="gomb" class="gomb" value="gomb2" id="gomb2">Új osztály</a>
                 <div class="helyzetsav">
                     <div class="ev"></div>
                     <div class="osztaly"></div>
@@ -23,7 +23,7 @@
                     if ($result->num_rows > 0) {
                         while ($row = $result->fetch_assoc()) {
                             $str = $row["ev"];
-                            echo "<a href=\"2diakok.php\">$str</a><\br>";
+                            echo " <a href=\"2diakok.php\">$str</a></br>";
                         }
                     }
                     ?></div>
