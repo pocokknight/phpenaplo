@@ -82,6 +82,10 @@ body{
 #gomb2{
     left: 55%;
 }
+#gomb3{
+	top: 85%;
+	left: 13%;
+}
 .lista{
     position: absolute;
     left: 10%;

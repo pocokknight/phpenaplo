@@ -18,12 +18,22 @@
                 </div>
                 <div class="lista"><?php 
                     include './connect.php';
-                    $sql = "select ev from ev";
+					include './adatok.php';
+					session_start();
+					$ev = $_SESSION["ev"];
+					echo $ev;
+                    $sql = "
+						select osztalyok.nev 
+						from osztalyok , ev_oszt_kapcs , ev
+						where ev.ev = $ev
+						and ev.ev = ev_oszt_kapcs.evid
+						and osztalyok.id = ev_oszt_kapcs.osztid
+					";
                     $result = $conn->query($sql);
                     if ($result->num_rows > 0) {
                         while ($row = $result->fetch_assoc()) {
-                            $str = $row["ev"];
-                            echo " <a href=\"2diakok.php\">$str</a></br>";
+                            $str = $row["nev"];
+                            echo "<input href=\"2diakok.php\">$str</a></br>";
                         }
                     }
                     ?></div>
